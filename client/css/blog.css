@@ -1,0 +1,2 @@
+.destroy {background: url('/recyclebin.png') no-repeat 0 7px; cursor: pointer;}
+.panel:hover, .columns:hover{cursor: pointer;}

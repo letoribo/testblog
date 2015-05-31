@@ -1,0 +1,30 @@
+<template name="myPosts">
+  {{#with currentUser}}    
+    <span class="round label"><h5>{{profile.name}}</h5></span>
+  {{/with}}
+  {{#each posts}}
+    <hr>
+    <div class="panel callout radius">
+      <h4>{{lead}}</h4>
+      <p> 
+        <a id="deletePost" class="tiny button right alert destroy">Delete</a><a id="status" class="tiny button right">{{status}}</a>
+      </p>
+      <h5>{{createdAt}} by {{author}}</h5>
+    </div>
+    {{#if isSelected}}
+      <div class="panel radius">
+        <p class="text-center"><h3 class="subheader">{{title}}</h3></p>
+        <p class="text-justify"><h5>{{body}}</h5></p>
+      </div>   
+      {{#each comments}}
+        <hr>    
+        <div class="row secondary">
+          <div class="small-6 large-2 columns">{{author}}</div>
+          <div class="small-6 large-8 columns">{{body}}</div>
+          <div class="small-12 large-2 columns">{{createdAt}}<p><a id="deleteComment" class="tiny button right alert destroy">Delete</a></p> 
+          </div>
+        </div>          
+      {{/each}}  
+    {{/if}}
+  {{/each}}
+</template>

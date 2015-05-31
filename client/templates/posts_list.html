@@ -1,0 +1,16 @@
+<template name="postsList">
+  {{#each posts}}
+    <hr>
+    {{#linkTo route='singlePost'}}
+      <div class="panel callout radius">
+        {{> postItem}}
+      </div>
+    {{/linkTo}}
+  {{/each}}
+</template>
+<template name="postItem"> 
+  <h3 class="text-center">{{title}}</h3>
+  <p class="lead">{{lead}}</p>
+  <h5 class="right">{{createdAt}}</h5> <h5>by {{author}}</h5>
+</template>
+

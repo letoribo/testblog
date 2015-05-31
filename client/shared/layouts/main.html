@@ -1,0 +1,42 @@
+<template name="mainLayout">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1>{{#linkTo route='root' class='navbar-brand'}}
+          Test blog
+        {{/linkTo}}</h1>
+      </li>  
+      </ul>
+      <section class="top-bar-section">
+      <ul class="left">
+        <li>
+          {{#linkTo route='root'}}
+            Home
+          {{/linkTo}}
+        </li>
+        <li>
+          {{#linkTo route='newPost'}}
+            Add new post
+          {{/linkTo}}
+        </li>
+        <li>
+          {{#linkTo route='myPosts'}}
+            My posts
+          {{/linkTo}}
+        </li>
+      </ul>
+      <ul class="right">
+       {{> accountButtons}}
+      </ul>
+      </section>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8">
+        {{> yield}}
+      </div>
+      <div class="col-lg-2"></div>
+    </div>
+  </div>
+</template>
